@@ -1,0 +1,277 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/core/**",
+              "ui_kits/landing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:SVN-Gilroy))/i]",
+        "message": "Font not provided by the design system. Available: SVN-Gilroy."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|children|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: tone, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:accent|primary|tint)$/]",
+        "message": "<Badge> tone must be one of 'accent' | 'primary' | 'tint'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BrandMark'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|size|wordmark|assetBase|key|ref|className|style|children)$/]",
+        "message": "<BrandMark> doesn't accept that prop. Declared props: tone, size, wordmark, assetBase."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BrandMark'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:forest|white|original)$/]",
+        "message": "<BrandMark> tone must be one of 'forest' | 'white' | 'original'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|disabled|focusRing|fullWidth|as|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, disabled, focusRing, fullWidth, as, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost|accent)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost' | 'accent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:button|a)$/]",
+        "message": "<Button> as must be one of 'button' | 'a'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:bordered|tint|padding|title|children|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: bordered, tint, padding, title, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute > JSXIdentifier[name!=/^(?:active|children|key|ref|className|style|children)$/]",
+        "message": "<Chip> doesn't accept that prop. Declared props: active, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Field'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|hint|focused|key|ref|className|style|children)$/]",
+        "message": "<Field> doesn't accept that prop. Declared props: label, hint, focused."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "BrandMark": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Chip": {
+        "replaces": []
+      },
+      "Field": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--action-accent",
+      "--action-accent-text",
+      "--action-primary",
+      "--action-primary-text",
+      "--background",
+      "--border-hairline",
+      "--border-subtle",
+      "--container-max",
+      "--dark-pine-slate",
+      "--divider",
+      "--dur-fast",
+      "--dur-instant",
+      "--dur-reveal",
+      "--ease-out",
+      "--ease-standard",
+      "--focus-ring",
+      "--focus-ring-offset",
+      "--font-body",
+      "--font-display",
+      "--forest-juniper",
+      "--frost-white",
+      "--glacial-ice-blue",
+      "--hover-brightness",
+      "--icon-inactive",
+      "--ink-a04",
+      "--ink-a08",
+      "--ink-a12",
+      "--ink-a18",
+      "--ink-a22",
+      "--lh-body",
+      "--lh-h1",
+      "--lh-h2",
+      "--lh-h3",
+      "--ls-h1",
+      "--ls-normal",
+      "--muted-olive",
+      "--on-accent",
+      "--on-primary",
+      "--pure-white",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--sage-mist",
+      "--shadow-button",
+      "--shadow-button-hover",
+      "--shadow-card",
+      "--shadow-raised",
+      "--size-body",
+      "--size-caption",
+      "--size-h1",
+      "--size-h1-fluid",
+      "--size-h2",
+      "--size-h3",
+      "--sp-lg",
+      "--sp-md",
+      "--sp-sm",
+      "--sp-xl",
+      "--sp-xs",
+      "--surface-card",
+      "--surface-inverse",
+      "--surface-tint",
+      "--terracotta-rust",
+      "--text-body",
+      "--text-heading",
+      "--text-link",
+      "--text-link-hover",
+      "--text-muted",
+      "--text-on-inverse",
+      "--transition-control",
+      "--weight-bold",
+      "--weight-medium",
+      "--weight-regular",
+      "--weight-semibold",
+      "--weight-xbold"
+    ],
+    "tokenKinds": {
+      "--frost-white": "color",
+      "--pure-white": "color",
+      "--glacial-ice-blue": "color",
+      "--sage-mist": "color",
+      "--muted-olive": "color",
+      "--forest-juniper": "color",
+      "--dark-pine-slate": "color",
+      "--terracotta-rust": "color",
+      "--on-primary": "color",
+      "--on-accent": "color",
+      "--ink-a04": "color",
+      "--ink-a08": "color",
+      "--ink-a12": "color",
+      "--ink-a18": "color",
+      "--ink-a22": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-semibold": "font",
+      "--weight-bold": "font",
+      "--weight-xbold": "font",
+      "--size-h1": "spacing",
+      "--size-h2": "spacing",
+      "--size-h3": "spacing",
+      "--size-body": "spacing",
+      "--size-caption": "spacing",
+      "--lh-h1": "other",
+      "--lh-h2": "other",
+      "--lh-h3": "other",
+      "--lh-body": "other",
+      "--ls-h1": "other",
+      "--ls-normal": "other",
+      "--size-h1-fluid": "spacing",
+      "--sp-xs": "spacing",
+      "--sp-sm": "spacing",
+      "--sp-md": "spacing",
+      "--sp-lg": "spacing",
+      "--sp-xl": "spacing",
+      "--container-max": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius",
+      "--shadow-card": "shadow",
+      "--shadow-button": "shadow",
+      "--shadow-button-hover": "shadow",
+      "--shadow-raised": "shadow",
+      "--border-hairline": "color",
+      "--dur-instant": "other",
+      "--dur-fast": "other",
+      "--dur-reveal": "other",
+      "--ease-standard": "other",
+      "--ease-out": "other",
+      "--transition-control": "other",
+      "--hover-brightness": "other",
+      "--focus-ring": "color",
+      "--focus-ring-offset": "spacing",
+      "--background": "color",
+      "--surface-card": "color",
+      "--surface-tint": "color",
+      "--surface-inverse": "color",
+      "--text-heading": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-on-inverse": "font",
+      "--text-link": "font",
+      "--text-link-hover": "font",
+      "--border-subtle": "color",
+      "--divider": "color",
+      "--icon-inactive": "color",
+      "--action-primary": "color",
+      "--action-primary-text": "font",
+      "--action-accent": "color",
+      "--action-accent-text": "font"
+    },
+    "fontFamilies": [
+      "SVN-Gilroy"
+    ]
+  }
+}

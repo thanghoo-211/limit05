@@ -1,0 +1,12 @@
+/* Choreographed: scroll-driven section reveals; micro-interactions stay instant. */
+:root{
+  --dur-instant:.15s; /* @kind other */
+  --dur-fast:.25s; /* @kind other */
+  --dur-reveal:.6s; /* @kind other */
+  --ease-standard:ease; /* @kind other */
+  --ease-out:cubic-bezier(.16,.84,.44,1); /* @kind other */
+  --transition-control:filter var(--dur-instant) var(--ease-standard),box-shadow var(--dur-instant) var(--ease-standard); /* @kind other */
+  --hover-brightness:1.08; /* @kind other */
+  --focus-ring:3px solid var(--terracotta-rust);
+  --focus-ring-offset:2px;
+}

@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Core controls" subtitle="Button, Badge, Chip, Field — states and sizes" -->
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Core controls</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--background);font-family:var(--font-body);color:var(--text-body)}#root{padding:20px 24px}.lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin:0 0 8px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:18px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const {Button,Badge,Chip,Field}=window.Limit05DesignSystem_2b3c93;
+function Demo(){return <>
+<p className="lbl">Variants</p>
+<div className="row"><Button>Mua ngay</Button><Button variant="ghost">Tìm hiểu thêm</Button><Button variant="accent">Flash deal</Button><Button disabled>Hết hàng</Button><Button focusRing>Focus</Button></div>
+<p className="lbl">Sizes</p>
+<div className="row"><Button size="sm">Small</Button><Button size="md">Medium</Button><Button size="lg">Large</Button></div>
+<p className="lbl">Badge &amp; Chip</p>
+<div className="row"><Badge>Sale -20%</Badge><Badge tone="primary">Limited</Badge><Badge tone="tint">Mới</Badge><Chip>Chống nước</Chip><Chip>Ripstop</Chip><Chip active>Đa ngăn</Chip></div>
+<p className="lbl">Field</p>
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'16px'}}><Field label="Email nhận ưu đãi" placeholder="ban@vidu.vn" style={{margin:0}}/><Field label="Focus state" placeholder="ban@vidu.vn" focused style={{margin:0}}/></div>
+</>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<!--
+  design-explore.html — 3 style families, pick by eye.
+  FILL: replace {{NAME}} {{TAGLINE}} {{PHILO_1..3}} with real PRODUCT.md text (no lorem).
+  For each family (A/B/C): set the CSS vars in the panel's style="" (colors) and --font-* ,
+  and swap the Google Fonts <link> to the family's VN-safe fonts (vn-fonts.md).
+  Keep the surface set matching PRODUCT.md Register; delete the other (see data-register blocks).
+  The contrast panel auto-runs on load + tab switch. Every row must read PASS before showing the student.
+-->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Explore — {{NAME}}</title>
+<!-- Swap these for each family's fonts; all must have vietnamese subset -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Sans:wght@400;500&family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0e0e10;color:#e7e7ea;font-family:'Noto Sans',sans-serif;line-height:1.6}
+  .tabs{position:sticky;top:0;z-index:10;display:flex;gap:.5rem;padding:1rem;background:#0e0e10;border-bottom:1px solid #26262b;flex-wrap:wrap}
+  .tabs button{font:inherit;font-weight:600;padding:.6rem 1.1rem;border:1px solid #3a3a42;border-radius:8px;background:#17171b;color:#e7e7ea;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:#e7e7ea;color:#0e0e10}
+  .panel{display:none;padding:2rem;max-width:960px;margin:0 auto}
+  .panel[data-active="true"]{display:block}
+  /* Surfaces render inside the family's own token scope */
+  .family{--radius:8px}
+  .family{background:var(--bg);color:var(--fg);font-family:var(--font-body);border-radius:12px;padding:2rem;overflow:hidden}
+  .family h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);line-height:1.1;color:var(--fg);font-weight:700;letter-spacing:-.02em}
+  .family .tagline{color:var(--muted-fg);font-size:1.15rem;margin:.5rem 0 1.25rem}
+  .family .philo{color:var(--fg);max-width:52ch;margin:.35rem 0}
+  .family .stress{color:var(--muted-fg);font-style:italic;margin:1rem 0;padding:.75rem 1rem;border-left:3px solid var(--accent)}
+  .btnrow{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.25rem 0}
+  .btn{font:inherit;font-weight:600;padding:.7rem 1.4rem;border-radius:var(--radius);border:1px solid transparent;background:var(--primary);color:var(--on-primary);cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.focus{outline:3px solid var(--accent);outline-offset:2px}
+  .btn.ghost{background:transparent;color:var(--fg);border-color:var(--border)}
+  .card{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin:1.25rem 0}
+  .field{display:block;margin:1rem 0}
+  .field label{display:block;color:var(--muted-fg);font-size:.9rem;margin-bottom:.35rem}
+  .field input{width:100%;font:inherit;padding:.7rem .9rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--fg)}
+  .field input:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+  /* product surfaces */
+  .nav{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem}
+  .nav .brand{font-family:var(--font-display);font-weight:700;color:var(--fg)}
+  .nav a{color:var(--muted-fg);text-decoration:none;font-size:.9rem}
+  .row{display:flex;justify-content:space-between;padding:.7rem 1rem;border-bottom:1px solid var(--border);color:var(--fg)}
+  .row .k{color:var(--muted-fg)}
+  /* contrast report */
+  .report{margin-top:1.5rem;font-family:'Noto Sans',sans-serif;font-size:.85rem;background:#17171b;color:#e7e7ea;border-radius:8px;padding:1rem}
+  .report table{width:100%;border-collapse:collapse}
+  .report td{padding:.3rem .5rem;border-bottom:1px solid #2a2a30}
+  .pass{color:#4ade80;font-weight:700}
+  .fail{color:#f87171;font-weight:700}
+  .report .hint{color:#9a9aa2;margin-top:.5rem}
+</style>
+</head>
+<body>
+<div class="tabs" role="tablist">
+  <button role="tab" aria-selected="true" data-target="A">A — <span class="fname">Literal</span></button>
+  <button role="tab" aria-selected="false" data-target="B">B — <span class="fname">Push</span></button>
+  <button role="tab" aria-selected="false" data-target="C">C — <span class="fname">Safe</span></button>
+</div>
+
+<!-- ============ FAMILY A (edit vars + fonts) ============ -->
+<section class="panel" data-active="true" data-panel="A">
+  <div class="family" style="
+      --primary:#1f3a5f; --on-primary:#ffffff; --accent:#b64e26; --on-accent:#ffffff;
+      --bg:#faf8f4; --fg:#1a1a1e; --card:#ffffff; --muted-fg:#5a5a63; --border:#e3ddd2;
+      --font-display:'Playfair Display',serif; --font-body:'Be Vietnam Pro',sans-serif; --radius:6px;">
+    <!-- BRAND (register=brand) surfaces; delete this block if register=product -->
+    <div data-register="brand">
+      <h1>{{NAME}}</h1>
+      <p class="tagline">{{TAGLINE}}</p>
+      <p class="philo">{{PHILO_1}}</p>
+      <p class="philo">{{PHILO_2}}</p>
+      <p class="stress">Vẽ đường quanh co, gập ghềnh sỏi đá — chữ Việt đủ dấu nặng ngã hỏi.</p>
+      <div class="btnrow"><button class="btn">Bắt đầu</button><button class="btn focus">Focus</button><button class="btn ghost">Tìm hiểu</button></div>
+      <div class="card"><strong>{{PHILO_3}}</strong></div>
+      <div class="field"><label>Email</label><input placeholder="ban@vidu.vn"></div>
+    </div>
+    <!-- PRODUCT (register=product) surfaces; delete this block if register=brand -->
+    <div data-register="product" hidden>
+      <div class="nav"><span class="brand">{{NAME}}</span><a href="#">Tổng quan</a><a href="#">Dữ liệu</a><a href="#">Cài đặt</a></div>
+      <h1>{{TAGLINE}}</h1>
+      <p class="philo">{{PHILO_1}}</p>
+      <p class="philo">{{PHILO_2}}</p>
+      <p class="stress">Vẽ đường quanh co, gập ghềnh sỏi đá — chữ Việt đủ dấu nặng ngã hỏi.</p>
+      <div class="card">
+        <div class="row"><span class="k">Doanh thu</span><span>1.240.000 đ</span></div>
+        <div class="row"><span class="k">Đơn hàng</span><span>37</span></div>
+      </div>
+      <div class="btnrow"><button class="btn">Tạo mới</button><button class="btn focus">Focus</button><button class="btn ghost">Huỷ</button></div>
+      <div class="field"><label>Tìm kiếm</label><input placeholder="Nhập từ khoá..."></div>
+    </div>
+    <div class="report" data-report></div>
+  </div>
+</section>
+
+<!-- ============ FAMILY B ============ -->
+<section class="panel" data-panel="B">
+  <div class="family" style="
+      --primary:#cc3a1f; --on-primary:#ffffff; --accent:#111114; --on-accent:#ffffff;
+      --bg:#111114; --fg:#f4f4f0; --card:#1c1c20; --muted-fg:#a9a9b2; --border:#33333b;
+      --font-display:'Space Grotesk',sans-serif; --font-body:'Be Vietnam Pro',sans-serif; --radius:2px;">
+    <div data-register="brand">
+      <h1>{{NAME}}</h1>
+      <p class="tagline">{{TAGLINE}}</p>
+      <p class="philo">{{PHILO_1}}</p>
+      <p class="philo">{{PHILO_2}}</p>
+      <p class="stress">Vẽ đường quanh co, gập ghềnh sỏi đá — chữ Việt đủ dấu nặng ngã hỏi.</p>
+      <div class="btnrow"><button class="btn">Bắt đầu</button><button class="btn focus">Focus</button><button class="btn ghost">Tìm hiểu</button></div>
+      <div class="card"><strong>{{PHILO_3}}</strong></div>
+      <div class="field"><label>Email</label><input placeholder="ban@vidu.vn"></div>
+    </div>
+    <div data-register="product" hidden>
+      <div class="nav"><span class="brand">{{NAME}}</span><a href="#">Tổng quan</a><a href="#">Dữ liệu</a><a href="#">Cài đặt</a></div>
+      <h1>{{TAGLINE}}</h1>
+      <p class="philo">{{PHILO_1}}</p>
+      <p class="philo">{{PHILO_2}}</p>
+      <p class="stress">Vẽ đường quanh co, gập ghềnh sỏi đá — chữ Việt đủ dấu nặng ngã hỏi.</p>
+      <div class="card"><div class="row"><span class="k">Doanh thu</span><span>1.240.000 đ</span></div><div class="row"><span class="k">Đơn hàng</span><span>37</span></div></div>
+      <div class="btnrow"><button class="btn">Tạo mới</button><button class="btn focus">Focus</button><button class="btn ghost">Huỷ</button></div>
+      <div class="field"><label>Tìm kiếm</label><input placeholder="Nhập từ khoá..."></div>
+    </div>
+    <div class="report" data-report></div>
+  </div>
+</section>
+
+<!-- ============ FAMILY C ============ -->
+<section class="panel" data-panel="C">
+  <div class="family" style="
+      --primary:#0d5c4a; --on-primary:#ffffff; --accent:#f0a500; --on-accent:#1a1a1e;
+      --bg:#ffffff; --fg:#14201c; --card:#f4f8f6; --muted-fg:#4f5f59; --border:#dce6e1;
+      --font-display:'Inter',sans-serif; --font-body:'Inter',sans-serif; --radius:12px;">
+    <div data-register="brand">
+      <h1>{{NAME}}</h1>
+      <p class="tagline">{{TAGLINE}}</p>
+      <p class="philo">{{PHILO_1}}</p>
+      <p class="philo">{{PHILO_2}}</p>
+      <p class="stress">Vẽ đường quanh co, gập ghềnh sỏi đá — chữ Việt đủ dấu nặng ngã hỏi.</p>
+      <div class="btnrow"><button class="btn">Bắt đầu</button><button class="btn focus">Focus</button><button class="btn ghost">Tìm hiểu</button></div>
+      <div class="card"><strong>{{PHILO_3}}</strong></div>
+      <div class="field"><label>Email</label><input placeholder="ban@vidu.vn"></div>
+    </div>
+    <div data-register="product" hidden>
+      <div class="nav"><span class="brand">{{NAME}}</span><a href="#">Tổng quan</a><a href="#">Dữ liệu</a><a href="#">Cài đặt</a></div>
+      <h1>{{TAGLINE}}</h1>
+      <p class="philo">{{PHILO_1}}</p>
+      <p class="philo">{{PHILO_2}}</p>
+      <p class="stress">Vẽ đường quanh co, gập ghềnh sỏi đá — chữ Việt đủ dấu nặng ngã hỏi.</p>
+      <div class="card"><div class="row"><span class="k">Doanh thu</span><span>1.240.000 đ</span></div><div class="row"><span class="k">Đơn hàng</span><span>37</span></div></div>
+      <div class="btnrow"><button class="btn">Tạo mới</button><button class="btn focus">Focus</button><button class="btn ghost">Huỷ</button></div>
+      <div class="field"><label>Tìm kiếm</label><input placeholder="Nhập từ khoá..."></div>
+    </div>
+    <div class="report" data-report></div>
+  </div>
+</section>
+
+<script>
+// --- WCAG contrast ---
+function toRGB(h){h=h.trim().replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');if(h.length===8)h=h.slice(0,6);const n=parseInt(h,16);return[(n>>16)&255,(n>>8)&255,n&255];}
+function lum([r,g,b]){const a=[r,g,b].map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2];}
+function ratio(f,b){const L1=lum(toRGB(f)),L2=lum(toRGB(b));const hi=Math.max(L1,L2),lo=Math.min(L1,L2);return (hi+0.05)/(lo+0.05);}
+const PAIRS=[
+  {label:'Body text (fg / bg)',fg:'--fg',bg:'--bg',min:4.5},
+  {label:'Muted text (muted-fg / bg)',fg:'--muted-fg',bg:'--bg',min:4.5},
+  {label:'Muted on card (muted-fg / card)',fg:'--muted-fg',bg:'--card',min:4.5},
+  {label:'Button (on-primary / primary)',fg:'--on-primary',bg:'--primary',min:4.5},
+  {label:'Accent (on-accent / accent)',fg:'--on-accent',bg:'--accent',min:4.5},
+  {label:'Card text (fg / card)',fg:'--fg',bg:'--card',min:4.5},
+];
+function runReport(fam){
+  const cs=getComputedStyle(fam);const v=n=>cs.getPropertyValue(n).trim();
+  let allPass=true;const rows=PAIRS.map(p=>{const r=ratio(v(p.fg),v(p.bg));const ok=r>=p.min;if(!ok)allPass=false;return `<tr><td>${p.label}</td><td>${r.toFixed(2)}</td><td>need ${p.min}</td><td class="${ok?'pass':'fail'}">${ok?'PASS':'FAIL'}</td></tr>`;}).join('');
+  const box=fam.querySelector('[data-report]');
+  box.innerHTML=`<strong>Kiểm tra tương phản (WCAG AA)</strong><table>${rows}</table><div class="hint">${allPass?'[OK] Tat ca PASS - san sang cho hoc vien xem.':'[FIX] Co dong FAIL - chinh token roi tai lai (Ctrl+F5) TRUOC khi cho hoc vien xem.'}</div>`;
+}
+document.querySelectorAll('.family').forEach(runReport);
+// --- tabs ---
+document.querySelectorAll('.tabs button').forEach(btn=>btn.addEventListener('click',()=>{
+  const t=btn.dataset.target;
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b===btn));
+  document.querySelectorAll('.panel').forEach(p=>p.dataset.active=(p.dataset.panel===t));
+}));
+</script>
+</body>
+</html>

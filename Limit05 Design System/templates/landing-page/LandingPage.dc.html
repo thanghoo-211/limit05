@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Limit05 landing page" description="Single-product sales landing page — hero, feature grid, material block, spec table, footer" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>@font-face{font-family:"SVN-Gilroy";src:url("../../assets/fonts/SVN-Gilroy-Regular.otf") format("opentype");font-weight:400;font-display:swap}@font-face{font-family:"SVN-Gilroy";src:url("../../assets/fonts/SVN-Gilroy-Medium.otf") format("opentype");font-weight:500;font-display:swap}@font-face{font-family:"SVN-Gilroy";src:url("../../assets/fonts/SVN-Gilroy-SemiBold.otf") format("opentype");font-weight:600;font-display:swap}@font-face{font-family:"SVN-Gilroy";src:url("../../assets/fonts/SVN-Gilroy-Bold.otf") format("opentype");font-weight:700;font-display:swap}@font-face{font-family:"SVN-Gilroy";src:url("../../assets/fonts/SVN-Gilroy-XBold.otf") format("opentype");font-weight:800;font-display:swap}body{margin:0;background:#F4F8FA}</style>
+</helmet>
+<div style="background:#F4F8FA;color:#192420;font-family:'SVN-Gilroy','Noto Sans',sans-serif;font-size:16px;line-height:1.6;padding-bottom:64px">
+
+<div style="background:#D7EFFF;color:#192420;font-size:14px;font-weight:500;text-align:center;padding:10px 16px">Miễn phí giao hàng toàn quốc cho đơn từ 500.000₫ — nhận hàng trong 2 ngày</div>
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(244,248,250,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(25,36,32,.08)">
+<div style="max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:32px">
+<span style="display:inline-flex;align-items:center;gap:8px"><img src="../../assets/logo-mark-forest.png" alt="Limit05" style="height:34px;width:auto;display:block"><span style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.02em;color:#192420">Limit05</span></span>
+<nav style="display:flex;gap:32px;margin-left:16px">
+<a href="#tinh-nang" style="font-size:15px;font-weight:500;color:#192420;text-decoration:none">Tính năng</a>
+<a href="#chat-lieu" style="font-size:15px;font-weight:500;color:#192420;text-decoration:none">Chất liệu</a>
+<a href="#thong-so" style="font-size:15px;font-weight:500;color:#192420;text-decoration:none">Thông số</a>
+</nav>
+<div style="margin-left:auto"><x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Button" size="sm" hint-size="120px,40px">Mua ngay</x-import></div>
+</div>
+</header>
+
+<section style="background:#D7EFFF;border-radius:24px;margin:32px auto 0;max-width:1200px;padding:64px 32px">
+<div style="display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center">
+<div>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Badge" hint-size="150px,26px">Sale -20% · còn 12 suất</x-import>
+<h1 style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:56px;line-height:1.08;letter-spacing:-0.02em;font-weight:800;color:#192420;margin:16px 0 8px">Không phải<br>giới hạn</h1>
+<p style="font-size:19px;line-height:1.5;color:#5C6558;margin:0 0 32px;max-width:46ch">Túi sling kỹ thuật ripstop chống thấm, hệ thống đa ngăn khoa học. Mỗi món đồ một ô cố định riêng.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px">
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Chip" hint-size="100px,30px">Chống nước</x-import>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Chip" hint-size="90px,30px">Đa ngăn</x-import>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Chip" hint-size="110px,30px">Ripstop 210D</x-import>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Chip" hint-size="70px,30px">420g</x-import>
+</div>
+<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:16px">
+<span style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-weight:800;font-size:34px;color:#192420;font-variant-numeric:tabular-nums">590.000₫</span>
+<span style="font-size:18px;color:#5C6558;text-decoration:line-through">740.000₫</span>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Button" size="lg" hint-size="150px,56px">Mua ngay</x-import>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Button" size="lg" variant="ghost" hint-size="190px,56px">Thêm giỏ hàng</x-import>
+</div>
+</div>
+<div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(25,36,32,.10);background:#fff">
+<img src="../../assets/product-1.png" alt="Túi sling Limit05" style="width:100%;display:block">
+</div>
+</div>
+</section>
+
+<section id="tinh-nang" style="max-width:1200px;margin:64px auto 0;padding:0 32px">
+<h2 style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:36px;line-height:1.15;font-weight:700;color:#192420;margin:0 0 32px;max-width:22ch">Bốn quyết định kỹ thuật, không phải bốn tính năng</h2>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 16px rgba(25,36,32,.08)">
+<strong style="display:block;font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:22px;line-height:1.25;font-weight:600;color:#2B4436;margin-bottom:8px">Mỗi món đồ, một ô cố định riêng</strong>
+<span style="color:#5C6558">Sáu ngăn phân vùng cho sạc, cáp, tai nghe, ví, chìa khoá và điện thoại. Rút ra dùng ngay, không phải lục tung túi.</span>
+</div>
+<div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 16px rgba(25,36,32,.08)">
+<strong style="display:block;font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:22px;line-height:1.25;font-weight:600;color:#2B4436;margin-bottom:8px">Ripstop chống thấm nước nhẹ</strong>
+<span style="color:#5C6558">Vải 210D dệt gia cường ô vuông, phủ PU mặt trong. Mưa rào bất chợt trên đường không làm ướt thiết bị.</span>
+</div>
+<div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 16px rgba(25,36,32,.08)">
+<strong style="display:block;font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:22px;line-height:1.25;font-weight:600;color:#2B4436;margin-bottom:8px">Ngăn đệm cho thiết bị</strong>
+<span style="color:#5C6558">Khoang chính lót mút 4mm, đủ cho tablet 11 inch. Không trầy xước khi đặt cạnh chìa khoá.</span>
+</div>
+<div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 16px rgba(25,36,32,.08)">
+<strong style="display:block;font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:22px;line-height:1.25;font-weight:600;color:#2B4436;margin-bottom:8px">420g, đeo cả ngày</strong>
+<span style="color:#5C6558">Dây đeo dệt 38mm với đệm vai tháo rời. Trọng lượng dồn về hông, không kéo vai khi đi xe máy.</span>
+</div>
+</div>
+</section>
+
+<section id="chat-lieu" style="max-width:1200px;margin:64px auto 0;padding:0 32px">
+<div style="display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center">
+<div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(25,36,32,.08)"><img src="../../assets/product-2.png" alt="Chi tiết vải ripstop" style="width:100%;display:block"></div>
+<div>
+<h2 style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:36px;line-height:1.15;font-weight:700;color:#192420;margin:0 0 16px">Giống một chiếc khay chia đồ thu nhỏ</h2>
+<p style="font-size:16px;line-height:1.6;color:#192420;margin:0 0 16px;max-width:52ch">Thay vì ném tất cả chìa khoá, sạc cáp và ví tiền lộn xộn vào một chiếc hộp lớn, mỗi món đồ đều có sẵn một ô cố định riêng biệt để bạn rút ra dùng ngay lập tức.</p>
+<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px;color:#192420">
+<li style="border-top:1px solid #AEB8A0;padding-top:8px">Khoá kéo YKK chống nước</li>
+<li style="border-top:1px solid #AEB8A0;padding-top:8px">Móc treo chìa khoá cố định</li>
+<li style="border-top:1px solid #AEB8A0;padding-top:8px">Ngăn sau chống trộm RFID</li>
+<li style="border-top:1px solid #AEB8A0;padding-top:8px">Đáy gia cường 500D</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="thong-so" style="max-width:1200px;margin:64px auto 0;padding:0 32px">
+<h2 style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:36px;line-height:1.15;font-weight:700;color:#192420;margin:0 0 32px">Thông số</h2>
+<div style="background:#fff;border-radius:16px;box-shadow:0 4px 16px rgba(25,36,32,.08);overflow:hidden">
+<div style="display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px 32px"><span style="color:#5C6558;font-size:14px;font-weight:500">Chất liệu</span><span>Ripstop 210D phủ PU, đáy 500D</span></div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px 32px;border-top:1px solid #AEB8A0"><span style="color:#5C6558;font-size:14px;font-weight:500">Kích thước</span><span>28 × 16 × 9 cm</span></div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px 32px;border-top:1px solid #AEB8A0"><span style="color:#5C6558;font-size:14px;font-weight:500">Trọng lượng</span><span>420 g</span></div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px 32px;border-top:1px solid #AEB8A0"><span style="color:#5C6558;font-size:14px;font-weight:500">Số ngăn</span><span>6 (1 chính, 3 phụ, 1 RFID, 1 chìa khoá)</span></div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px 32px;border-top:1px solid #AEB8A0"><span style="color:#5C6558;font-size:14px;font-weight:500">Bảo hành</span><span>24 tháng</span></div>
+</div>
+</section>
+
+<section style="max-width:1200px;margin:64px auto 0;padding:0 32px">
+<div style="background:#D7EFFF;border-radius:16px;padding:64px 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center">
+<div>
+<h2 style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-size:36px;line-height:1.15;font-weight:700;color:#192420;margin:0 0 8px">Giảm thêm 10% cho đơn đầu tiên</h2>
+<p style="color:#5C6558;margin:0">Nhận mã ngay qua email. Không spam, một tháng một thư.</p>
+</div>
+<div>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Field" label="Email nhận ưu đãi" placeholder="ban@vidu.vn" hint-size="100%,72px"></x-import>
+<x-import component-from-global-scope="Limit05DesignSystem_2b3c93.Button" hint-size="130px,50px">Nhận mã</x-import>
+</div>
+</div>
+</section>
+
+<footer style="background:#2B4436;margin-top:64px;padding:64px 32px">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:64px">
+<div>
+<span style="display:inline-flex;align-items:center;gap:8px"><img src="../../assets/logo-mark-white.png" alt="Limit05" style="height:36px;width:auto;display:block"><span style="font-family:'SVN-Gilroy','Be Vietnam Pro',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.02em;color:#fff">Limit05</span></span>
+<p style="color:rgba(255,255,255,.75);font-size:14px;line-height:1.6;margin:16px 0 0;max-width:34ch">Túi kỹ thuật cho di chuyển hàng ngày. Tự do — Khác biệt — Bền bỉ.</p>
+</div>
+<div style="display:grid;gap:8px;align-content:start">
+<span style="color:#fff;font-weight:600;font-size:14px;margin-bottom:4px">Sản phẩm</span>
+<a href="#tinh-nang" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:14px">Tính năng</a>
+<a href="#chat-lieu" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:14px">Chất liệu</a>
+<a href="#thong-so" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:14px">Thông số</a>
+</div>
+<div style="display:grid;gap:8px;align-content:start">
+<span style="color:#fff;font-weight:600;font-size:14px;margin-bottom:4px">Hỗ trợ</span>
+<a href="#" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:14px">Bảo hành 24 tháng</a>
+<a href="#" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:14px">Đổi trả 30 ngày</a>
+<a href="#" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:14px">Liên hệ</a>
+</div>
+</div>
+</footer>
+</div>
+
+</x-dc>
+</body>
+</html>

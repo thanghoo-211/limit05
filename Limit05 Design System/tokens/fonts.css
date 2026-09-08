@@ -1,0 +1,7 @@
+/* SVN-Gilroy — self-hosted OTF supplied by the brand. Not on Google Fonts.
+   VN-safe fallbacks (Be Vietnam Pro / Noto Sans) are declared in tokens/typography.css. */
+@font-face{font-family:"SVN-Gilroy";src:url("../assets/fonts/SVN-Gilroy-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"SVN-Gilroy";src:url("../assets/fonts/SVN-Gilroy-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"SVN-Gilroy";src:url("../assets/fonts/SVN-Gilroy-SemiBold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"SVN-Gilroy";src:url("../assets/fonts/SVN-Gilroy-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"SVN-Gilroy";src:url("../assets/fonts/SVN-Gilroy-XBold.otf") format("opentype");font-weight:800;font-style:normal;font-display:swap}

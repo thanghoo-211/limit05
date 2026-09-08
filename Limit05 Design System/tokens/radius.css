@@ -1,0 +1,7 @@
+/* No sharp corners anywhere — the product is soft technical fabric, not machined metal. */
+:root{
+  --radius-sm:8px;   /* button, input, chip-square */
+  --radius-md:16px;  /* card, image container */
+  --radius-lg:24px;  /* hero block, large section */
+  --radius-pill:999px;
+}

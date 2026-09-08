@@ -1,0 +1,80 @@
+<!-- @dsCard group="Landing page" viewport="1200x760" name="Limit05 landing page" subtitle="Interactive product landing — hero, features, cart, checkout" -->
+<!doctype html><html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Limit05 — Không phải giới hạn</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--background);color:var(--text-body);font-family:var(--font-body);font-size:var(--size-body);line-height:var(--lh-body)}a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}*{box-sizing:border-box}</style>
+</head><body><div id="root"></div>
+<script type="text/babel" src="header.jsx"></script>
+<script type="text/babel" src="hero.jsx"></script>
+<script type="text/babel" src="features.jsx"></script>
+<script type="text/babel" src="commerce.jsx"></script>
+<script type="text/babel">
+const { Card, Field, Button, Badge } = window.Limit05DesignSystem_2b3c93;
+
+function Newsletter() {
+  const [sent, setSent] = React.useState(false);
+  return (
+    <section style={{maxWidth:'var(--container-max)',margin:'var(--sp-xl) auto 0',padding:'0 var(--sp-lg)'}}>
+      <Card tint bordered={false} padding="var(--sp-xl) var(--sp-lg)">
+        <div style={{display:'grid',gridTemplateColumns:'1.2fr 1fr',gap:'var(--sp-xl)',alignItems:'center'}}>
+          <div>
+            <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--size-h2)',lineHeight:'var(--lh-h2)',fontWeight:'var(--weight-bold)',color:'var(--text-heading)',margin:'0 0 var(--sp-sm)'}}>Giảm thêm 10% cho đơn đầu tiên</h2>
+            <p style={{color:'var(--text-muted)',margin:0}}>Nhận mã ngay qua email. Không spam, một tháng một thư.</p>
+          </div>
+          <div>
+            {sent ? (
+              <p style={{margin:0,fontWeight:600,color:'var(--action-primary)'}}>Đã gửi mã tới email của bạn.</p>
+            ) : (
+              <>
+                <Field label="Email nhận ưu đãi" placeholder="ban@vidu.vn" style={{marginTop:0}} />
+                <Button onClick={() => setSent(true)}>Nhận mã</Button>
+              </>
+            )}
+          </div>
+        </div>
+      </Card>
+    </section>
+  );
+}
+
+function App() {
+  const [banner, setBanner] = React.useState(true);
+  const [count, setCount] = React.useState(0);
+  const [cart, setCart] = React.useState(false);
+  const [step, setStep] = React.useState(null);
+  const [bar, setBar] = React.useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => setBar(window.scrollY > 620);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); });
+
+  const add = () => { setCount(c => c + 1); setCart(true); };
+  const buy = () => { setCount(c => Math.max(1, c)); setStep('form'); };
+
+  return (
+    <>
+      {banner && <Announcement onClose={() => setBanner(false)} />}
+      <Header cartCount={count} onCart={() => setCart(true)} onBuy={buy} />
+      <Hero onBuy={buy} onAdd={add} />
+      <Features />
+      <Material />
+      <Specs />
+      <Newsletter />
+      <Footer />
+      <BuyBar visible={bar && !cart && !step} onAdd={add} onBuy={buy} />
+      <CartDrawer open={cart} count={count} onClose={() => setCart(false)} onCheckout={() => { setCart(false); setStep('form'); }} onQty={d => setCount(c => Math.max(0, c + d))} />
+      <Checkout step={step} onSubmit={() => setStep('done')} onClose={() => setStep(null)} />
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>

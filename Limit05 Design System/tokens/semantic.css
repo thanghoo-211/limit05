@@ -1,0 +1,23 @@
+/* Semantic aliases — author UI against these, not the raw ramp. */
+:root{
+  --background:var(--frost-white);
+  --surface-card:var(--pure-white);
+  --surface-tint:var(--glacial-ice-blue);
+  --surface-inverse:var(--forest-juniper);
+
+  --text-heading:var(--dark-pine-slate);
+  --text-body:var(--dark-pine-slate);
+  --text-muted:var(--muted-olive);
+  --text-on-inverse:var(--pure-white);
+  --text-link:var(--forest-juniper);
+  --text-link-hover:var(--terracotta-rust);
+
+  --border-subtle:var(--sage-mist);
+  --divider:var(--sage-mist);
+  --icon-inactive:var(--sage-mist);
+
+  --action-primary:var(--forest-juniper);
+  --action-primary-text:var(--on-primary);
+  --action-accent:var(--terracotta-rust);
+  --action-accent-text:var(--on-accent);
+}

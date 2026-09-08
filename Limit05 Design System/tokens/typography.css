@@ -1,0 +1,28 @@
+:root{
+  --font-display:"SVN-Gilroy","Be Vietnam Pro",sans-serif;
+  --font-body:"SVN-Gilroy","Noto Sans",sans-serif;
+
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-xbold:800;
+
+  /* sizes as specced in DESIGN.md — do not snap to a modular scale */
+  --size-h1:56px;
+  --size-h2:36px;
+  --size-h3:22px;
+  --size-body:16px;
+  --size-caption:14px;
+
+  --lh-h1:1.08; /* @kind other */
+  --lh-h2:1.15; /* @kind other */
+  --lh-h3:1.25; /* @kind other */
+  --lh-body:1.6; /* @kind other */
+
+  --ls-h1:-0.02em; /* @kind other */
+  --ls-normal:0; /* @kind other */
+
+  /* fluid display size used by hero units (from the confirmed reference build) */
+  --size-h1-fluid:clamp(2.25rem,5vw,3.5rem);
+}

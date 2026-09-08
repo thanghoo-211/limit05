@@ -1,0 +1,8 @@
+/* Soft layering, never flat, never glossy. Shadows are always tinted with the text anchor. */
+:root{
+  --shadow-card:0 4px 16px rgba(25,36,32,.08);
+  --shadow-button:0 2px 6px rgba(25,36,32,.18);
+  --shadow-button-hover:0 4px 10px rgba(25,36,32,.22);
+  --shadow-raised:0 8px 28px rgba(25,36,32,.10);
+  --border-hairline:1px solid var(--sage-mist);
+}

@@ -1,0 +1,9 @@
+/* 8-point grid. Section rhythm = --sp-xl, intra-section = --sp-lg / --sp-md. */
+:root{
+  --sp-xs:4px;
+  --sp-sm:8px;
+  --sp-md:16px;
+  --sp-lg:32px;
+  --sp-xl:64px;
+  --container-max:1200px;
+}

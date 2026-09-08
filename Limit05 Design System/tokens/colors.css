@@ -1,0 +1,24 @@
+/* Palette: "Modern Earthy & Alpine" — locked. Source: Color_palette.md -> DESIGN.md frontmatter.
+   Distribution is governed by the 60-30-10 rule (see readme.md). */
+:root{
+  /* base ramp */
+  --frost-white:#F4F8FA;        /* canvas base, 60% */
+  --pure-white:#FFFFFF;         /* card surface */
+  --glacial-ice-blue:#D7EFFF;   /* soft highlight, 30% */
+  --sage-mist:#AEB8A0;          /* muted earth midtone: borders/dividers/inactive icons only */
+  --muted-olive:#5C6558;        /* secondary text (replaces Sage Mist in any text role) */
+  --forest-juniper:#2B4436;     /* primary action, 10% */
+  --dark-pine-slate:#192420;    /* text anchor, WCAG AAA on Frost White */
+  --terracotta-rust:#D66847;    /* high-contrast accent, <5% */
+
+  /* on-color pairs */
+  --on-primary:#FFFFFF;
+  --on-accent:#FFFFFF;
+
+  /* alpha derivations of the text anchor — the only tint/shade source in the system */
+  --ink-a04:rgba(25,36,32,.04);
+  --ink-a08:rgba(25,36,32,.08);
+  --ink-a12:rgba(25,36,32,.12);
+  --ink-a18:rgba(25,36,32,.18);
+  --ink-a22:rgba(25,36,32,.22);
+}
